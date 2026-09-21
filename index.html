@@ -85,6 +85,13 @@
     .art-tile:last-child { grid-column:span 2; }
     .site-header { position:relative; z-index:3; }
     .gallery-grid { margin-bottom:2rem; }
+    .gallery-grid { grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:auto; gap:2rem; }
+    .art-tile, .art-tile:first-child, .art-tile:last-child { grid-column:auto; grid-row:auto; background:#fffdf7; text-align:left; }
+    .art-tile img { height:auto; aspect-ratio: 3 / 4; object-fit:contain; padding:12px; background:#f0eadc; }
+    .art-tile span { position:static; display:block; border:0; border-radius:0; background:transparent; padding:1rem 1rem .2rem; font-size:1.1rem; }
+    .art-tile small { display:block; padding:0 1rem 1rem; color:#665a49; }
+    @media(max-width:760px) { .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:auto; gap:1rem; } .art-tile:first-child,.art-tile:last-child { grid-column:auto; grid-row:auto; } }
+    @media(max-width:440px) { .gallery-grid { grid-template-columns:1fr; } .nav .button { font-size:.8rem; padding:.5rem .7rem; } }
     :focus-visible { outline:3px solid #765bb6; outline-offset:5px; }
     .faq { max-width:800px; margin:auto; }
     details { border-bottom:1px solid #d6cba9; padding:1.2rem 0; }
@@ -94,6 +101,8 @@
     @keyframes float { 50% { translate:0 -12px; rotate:2deg; } }
     @media (max-width:760px) { .site-header { padding:.8rem 1rem; } .nav a:not(.button) { display:none; } .hero-inner { grid-template-columns:1fr; padding-top:3.5rem; min-height:auto; } .hero-art { min-height:300px; } .bee { width:330px; right:50%; transform:translateX(50%); } .mission,.play { grid-template-columns:1fr; gap:2rem; } .cards { grid-template-columns:1fr; gap:1.5rem; } .card:nth-child(2) { transform:none; } .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:250px 150px 150px; } .art-tile:first-child { grid-column:span 2; grid-row:auto; } .section { padding:4rem 1.25rem; } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; scroll-behavior:auto!important; } }
+    @media(max-width:760px) { .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:auto; } .art-tile:first-child,.art-tile:last-child { grid-column:auto; grid-row:auto; } }
+    @media(max-width:440px) { .gallery-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -144,12 +153,14 @@
     </section>
     <section class="gallery" id="gallery">
       <div class="section">
-        <div class="intro center"><span class="eyebrow">A peek inside</span><h2>Where will your crayons take you?</h2><p>From wide-open skies to friendly animals, our adventures are made to spark a child’s next great idea.</p></div>
+        <div class="intro center"><span class="eyebrow">Meet our book collection</span><h2>Six adventures. A world of imagination.</h2><p>Explore Yosemite with Drex, travel through time with Bibi, and discover stories full of music, basketball, history, and Halloween magic. Tap a cover for a closer look.</p></div>
         <div class="gallery-grid" aria-label="ColorBeeMine adventure gallery">
-          <button class="art-tile" data-art="assets/scenes/cover-secret-forest.png" data-label="Secret Forest adventure"><img src="assets/scenes/cover-secret-forest.png" alt="A colorful secret forest coloring adventure cover"><span>Secret Forest</span></button>
-          <button class="art-tile" data-art="assets/scenes/cover-savannah-journey.png" data-label="Savannah Journey adventure"><img src="assets/scenes/cover-savannah-journey.png" alt="A colorful savannah coloring adventure cover"><span>Savannah Journey</span></button>
-          <button class="art-tile" data-art="assets/scenes/cover-niagara-journey.png" data-label="Niagara Journey adventure"><img src="assets/scenes/cover-niagara-journey.png" alt="A colorful Niagara Falls coloring adventure cover"><span>Niagara Journey</span></button>
-          <button class="art-tile" data-art="assets/scenes/cover-tiny-world-shorts.png" data-label="Tiny World adventure"><img src="assets/scenes/cover-tiny-world-shorts.png" alt="A colorful tiny world coloring adventure cover"><span>Tiny World</span></button>
+          <button class="art-tile" data-art="previews/yosemite.webp" data-label="Drex's Yosemite Adventure cover preview"><img loading="lazy" src="previews/yosemite.webp" alt="Drex's Yosemite Adventure cover"><span>Drex’s Yosemite Adventure</span><small>Nature &amp; discovery · 10 pages</small></button>
+          <button class="art-tile" data-art="previews/time-travel.webp" data-label="Bibi's Time-Travel Adventure cover preview"><img loading="lazy" src="previews/time-travel.webp" alt="Bibi's Time-Travel Adventure cover"><span>Bibi’s Time-Travel Adventure</span><small>America’s early helpers · 10 pages</small></button>
+          <button class="art-tile" data-art="previews/america.webp" data-label="Bibi Explores America's Beginnings cover preview"><img loading="lazy" src="previews/america.webp" alt="Bibi Explores America's Beginnings cover"><span>America’s Beginnings</span><small>History &amp; discovery · 13 pages</small></button>
+          <button class="art-tile" data-art="previews/halloween.webp" data-label="Bibi's Halloween Town cover preview"><img loading="lazy" src="previews/halloween.webp" alt="Bibi's Halloween Town cover"><span>Bibi’s Halloween Town</span><small>A not-too-spooky adventure · 10 pages</small></button>
+          <button class="art-tile" data-art="previews/taylor.webp" data-label="Bibi and Friends: Taylor's Musical Journey cover preview"><img loading="lazy" src="previews/taylor.webp" alt="Bibi and Friends: Taylor's Musical Journey cover"><span>Taylor’s Musical Journey</span><small>With Bibi, Drex &amp; Nova · 10 pages</small></button>
+          <button class="art-tile" data-art="previews/nba.webp" data-label="Bibi's NBA Adventure cover preview"><img loading="lazy" src="previews/nba.webp" alt="Bibi's NBA Adventure cover"><span>Bibi’s NBA Adventure</span><small>Teams, legends &amp; basketball · 10 pages</small></button>
         </div>
       </div>
     </section>
