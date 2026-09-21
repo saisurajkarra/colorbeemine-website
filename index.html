@@ -41,6 +41,11 @@
     .mission { display:grid; grid-template-columns:.9fr 1.1fr; gap:3.5rem; align-items:center; }
     .mission-art { background:#ffd85a; border:3px solid var(--ink); border-radius:35px; padding:1.8rem; min-height:305px; display:grid; place-items:center; box-shadow:8px 8px 0 var(--ink); }
     .mission-art span { font-size:clamp(7rem,18vw,11rem); filter:drop-shadow(5px 5px 0 rgba(255,255,255,.7)); }
+    .mission-art.friends-card { min-height:0; padding:1.4rem .8rem; background:#fff; display:block; text-align:center; }
+    .friends-window { position:relative; overflow:hidden; width:100%; aspect-ratio:1448 / 435; margin:.8rem 0 1.2rem; }
+    .friends-window img { position:absolute; width:100%; height:auto; max-width:none; left:0; top:-91.95%; }
+    .friends-card h3 { margin:0 0 .5rem; }
+    .friends-card .friends-names { font-size:.9rem; line-height:1.7; margin:0; color:#514a40; }
     .mission p { font-size:1.16rem; }
     .offerings { background:#fff; border-top:2px dashed #e4c55c; border-bottom:2px dashed #e4c55c; }
     .center { text-align:center; margin-inline:auto; }
@@ -138,7 +143,7 @@
       <div class="hill left"></div><div class="hill right"></div>
     </section>
     <section class="section mission" id="our-story">
-      <div class="mission-art" aria-hidden="true"><span>🐝</span></div>
+      <div class="mission-art friends-card"><h3>Meet Bibi™ &amp; Friends</h3><div class="friends-window"><img loading="lazy" src="assets/characters/colorbeemine/friends-reference.jpeg" alt="Bibi the bee with Drex the dinosaur, Lumi the unicorn, Pip the puppy, Tiko the tiger, Ollie the octopus, and Nova the fox"></div><p class="friends-names">Bibi · Drex · Nova · Lumi · Pip · Tiko · Ollie</p><p class="friends-names">Different talents. Big imaginations. One happy hive.</p></div>
       <div>
         <span class="eyebrow">Why we buzz</span>
         <h2>Small helpers. Big, beautiful ideas.</h2>
